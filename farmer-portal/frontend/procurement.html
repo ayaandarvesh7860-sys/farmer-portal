@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Procurement | Smart Farmer Portal</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-head">
+  <div class="container">
+    <h1>Crop procurement</h1>
+    <p>Fill the details once, choose a centre, and follow your request through every stage.</p>
+  </div>
+</div>
+
+<div class="container pb-5">
+  <ul class="nav nav-pills mb-4" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#new-request" type="button">
+      <i class="bi bi-plus-circle me-1"></i>New request</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#my-requests" type="button" id="requests-tab">
+      <i class="bi bi-list-check me-1"></i>My requests</button></li>
+  </ul>
+
+  <div class="tab-content">
+
+    <!-- ======================= NEW REQUEST ======================= -->
+    <div class="tab-pane fade show active" id="new-request">
+      <div class="card p-4">
+        <form id="procurement-form" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="farmer_name">Farmer name</label>
+              <input type="text" class="form-control" id="farmer_name" disabled>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="farmer_code">Farmer ID</label>
+              <input type="text" class="form-control" id="farmer_code" disabled>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="crop">Crop</label>
+              <select class="form-select" id="crop" name="crop" required>
+                <option value="">Select a crop</option>
+                <option>Wheat</option><option>Rice</option><option>Cotton</option>
+                <option>Soybean</option><option>Onion</option><option>Maize</option>
+                <option>Sugarcane</option><option>Pulses</option><option>Other</option>
+              </select>
+              <div class="invalid-feedback">Select the crop you want to sell.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="variety">Crop variety <span class="fw-normal text-muted">(optional)</span></label>
+              <input type="text" class="form-control" id="variety" name="variety" placeholder="JS-335, Lok-1, N-53…">
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label" for="quantity">Quantity</label>
+              <input type="number" class="form-control" id="quantity" name="quantity" min="0.1" step="0.1" required>
+              <div class="invalid-feedback">Enter a quantity greater than zero.</div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="unit">Unit</label>
+              <select class="form-select" id="unit" name="unit" required>
+                <option value="Quintal" selected>Quintal</option>
+                <option value="Kg">Kg</option>
+                <option value="Ton">Ton</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="harvest_date">Harvest date</label>
+              <input type="date" class="form-control" id="harvest_date" name="harvest_date">
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="expected_price">Expected price per unit (₹)</label>
+              <input type="number" class="form-control" id="expected_price" name="expected_price" min="0" step="1" placeholder="4800">
+              <div class="form-text">The final rate is decided at the centre after the quality check.</div>
+              <div class="invalid-feedback">Expected price must be a number.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="centre_id">Procurement centre</label>
+              <select class="form-select" id="centre_id" name="centre_id" required>
+                <option value="">Loading centres…</option>
+              </select>
+              <div class="invalid-feedback">Choose a procurement centre.</div>
+              <div class="form-text"><a href="centres.html">Compare centres by distance and queue</a></div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="vehicle_no">Vehicle number <span class="fw-normal text-muted">(optional)</span></label>
+              <input type="text" class="form-control" id="vehicle_no" name="vehicle_no" placeholder="MH15AB1234">
+              <div class="invalid-feedback">Enter a valid vehicle number.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="remarks">Remarks <span class="fw-normal text-muted">(optional)</span></label>
+              <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Cleaned and graded, ready for weighing">
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <button type="submit" class="btn btn-farm btn-lg"><i class="bi bi-check2-circle me-2"></i>Review and submit</button>
+            <button type="reset" class="btn btn-outline-secondary btn-lg">Clear form</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ======================= MY REQUESTS ======================= -->
+    <div class="tab-pane fade" id="my-requests">
+      <div class="card p-3 p-md-4 mb-3">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="req-search">Search</label>
+            <input type="search" class="form-control" id="req-search" placeholder="Procurement ID, crop or centre">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="req-status">Status</label>
+            <select class="form-select" id="req-status"><option value="">All statuses</option></select>
+          </div>
+        </div>
+      </div>
+      <div id="request-list"><div class="empty-state"><i class="bi bi-hourglass-split"></i>Loading your requests…</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- confirmation summary before submitting -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Check the details before submitting</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="confirm-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Go back and edit</button>
+        <button type="button" class="btn btn-farm" id="confirm-submit">Submit procurement</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- success screen -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-4" id="success-body"></div>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/components.js"></script>
+<script src="js/procurement.js"></script>
+</body>
+</html>

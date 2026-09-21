@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Farmer Procurement &amp; Assistance Portal</title>
+  <meta name="description" content="Find nearby procurement centres, upload documents, sell your crop and get a digital receipt.">
+  <link rel="icon" href="assets/logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="hero-note"><i class="bi bi-shield-check"></i> Government-style digital procurement, built for farmers</span>
+        <h1 class="mt-3">Smart digital services for farmers</h1>
+        <p class="mt-3">
+          Find the procurement centre closest to your field, see how long the queue is before you load
+          the tractor, keep your documents ready in one place, track your crop from weighing to payment,
+          and collect a digital receipt you can download any time.
+        </p>
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a href="centres.html" class="btn btn-harvest btn-lg"><i class="bi bi-geo-alt me-2"></i>Find a nearby centre</a>
+          <a href="procurement.html" class="btn btn-farm btn-lg"><i class="bi bi-basket me-2"></i>Start procurement</a>
+          <a href="assistant.html" class="btn btn-ghost-light btn-lg"><i class="bi bi-robot me-2"></i>Ask the AI assistant</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-panel">
+          <h5 class="mb-3"><i class="bi bi-broadcast text-success me-2"></i>Centres open right now</h5>
+          <div id="hero-centres" class="small text-muted">Loading centre information…</div>
+          <div class="row mt-3 border-top pt-3">
+            <div class="col-4 hero-stat"><span class="n" id="hero-centre-count">–</span><span class="l">centres</span></div>
+            <div class="col-4 hero-stat"><span class="n" id="hero-queue">–</span><span class="l">farmers in queue</span></div>
+            <div class="col-4 hero-stat"><span class="n">3</span><span class="l">languages</span></div>
+          </div>
+          <a href="centres.html" class="btn btn-outline-farm w-100 mt-3">See all centres</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========================== FEATURES ========================== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">What you can do here</h2>
+    <p class="section-lead">Six services, all working from the same farmer account.</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-geo-alt-fill"></i></div>
+          <h5 class="card-title">Nearby centre finder</h5>
+          <p class="mb-3">Share your location once and see every centre around you with distance, working
+            hours, queue length and estimated waiting time.</p>
+          <a href="centres.html" class="stretched-link">Open the finder</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-folder2-open"></i></div>
+          <h5 class="card-title">Digital document upload</h5>
+          <p class="mb-3">Upload six required documents once. Track which are verified and which are still
+            waiting, instead of carrying photocopies each season.</p>
+          <a href="documents.html" class="stretched-link">Manage documents</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-basket-fill"></i></div>
+          <h5 class="card-title">Digital procurement</h5>
+          <p class="mb-3">Fill one form with crop, quantity and harvest date, pick a centre, and follow the
+            request through weighing, quality check and payment.</p>
+          <a href="procurement.html" class="stretched-link">Start a request</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-receipt"></i></div>
+          <h5 class="card-title">Digital receipt</h5>
+          <p class="mb-3">Every completed procurement produces a receipt with a unique transaction number
+            that you can view, print, download or share.</p>
+          <a href="receipts.html" class="stretched-link">View receipts</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-robot"></i></div>
+          <h5 class="card-title">AI farmer assistant</h5>
+          <p class="mb-3">Ask about documents, centres, procurement status, payments or schemes in
+            English, Hindi or Marathi and get a plain-language answer.</p>
+          <a href="assistant.html" class="stretched-link">Ask a question</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card feature-card p-4">
+          <div class="icon-badge"><i class="bi bi-flower1"></i></div>
+          <h5 class="card-title">Crop information</h5>
+          <p class="mb-3">Season, soil, irrigation, harvesting, storage and common problems for the crops
+            handled at procurement centres.</p>
+          <a href="crops.html" class="stretched-link">Read crop guides</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= HOW IT WORKS ======================== -->
+<section class="section" style="background:#EFF6F1">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-lead">Six steps from registration to payment. You only visit the centre once.</p>
+        <a href="register.html" class="btn btn-farm"><i class="bi bi-person-plus me-2"></i>Create your account</a>
+      </div>
+      <div class="col-lg-8">
+        <div class="steps">
+          <div class="step-item"><span class="num"></span>
+            <div><strong>Register</strong><p class="mb-0 text-muted">Name, mobile number and village. The portal gives you a farmer ID.</p></div></div>
+          <div class="step-item"><span class="num"></span>
+            <div><strong>Upload documents</strong><p class="mb-0 text-muted">Six documents, any of PDF, JPG or PNG, under 5 MB each.</p></div></div>
+          <div class="step-item"><span class="num"></span>
+            <div><strong>Find a procurement centre</strong><p class="mb-0 text-muted">Sorted by distance, with the current queue and waiting time.</p></div></div>
+          <div class="step-item"><span class="num"></span>
+            <div><strong>Submit your crop details</strong><p class="mb-0 text-muted">Crop, variety, quantity, harvest date and expected price.</p></div></div>
+          <div class="step-item"><span class="num"></span>
+            <div><strong>Complete procurement at the centre</strong><p class="mb-0 text-muted">Weighing and quality check are recorded against your request.</p></div></div>
+          <div class="step-item"><span class="num"></span>
+            <div><strong>Get your digital receipt</strong><p class="mb-0 text-muted">Transaction number, rate and amount, ready to download or print.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== DEMO NOTE ========================== -->
+<section class="pb-5">
+  <div class="container">
+    <div class="demo-banner d-flex flex-wrap gap-3 align-items-center justify-content-between">
+      <div>
+        <strong>Demonstration login.</strong>
+        Farmer: mobile <code>9876543210</code>, password <code>demo1234</code> &nbsp;•&nbsp;
+        Administrator: <code>admin</code> / <code>admin123</code>.
+        No real identity, Aadhaar or bank data is used anywhere in this project.
+      </div>
+      <a href="login.html" class="btn btn-farm">Log in with the demo account</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/components.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

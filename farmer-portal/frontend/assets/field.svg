@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="600" fill="#14703A"/>
+  <path d="M0 420 Q300 350 600 420 T1200 400 V600 H0 Z" fill="#0E4429" opacity=".55"/>
+  <path d="M0 470 Q300 420 600 480 T1200 460 V600 H0 Z" fill="#0B3722" opacity=".55"/>
+  <g stroke="#1E9E4F" stroke-width="3" opacity=".35">
+    <path d="M60 600 V470 M120 600 V450 M180 600 V480 M240 600 V440 M300 600 V470 M360 600 V455 M420 600 V485 M480 600 V445 M540 600 V475 M600 600 V450 M660 600 V480 M720 600 V455 M780 600 V470 M840 600 V445 M900 600 V480 M960 600 V460 M1020 600 V475 M1080 600 V450 M1140 600 V470"/>
+  </g>
+  <circle cx="980" cy="120" r="58" fill="#E0A02C" opacity=".8"/>
+</svg>
